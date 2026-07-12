@@ -11,3 +11,11 @@
 ----------------------------------------------------
 
 Although the design methodologies were different (Structural vs. Behavioral), the RTL Viewer generated identical hardware schematics. This is because the behavioral memory array uses asynchronous reads, which forces the synthesizer to implement the memory using discrete D-Flip Flops and Multiplexers instead of dedicated Block RAM
+
+
+# Testbench Waveform After 100 ns  :
+<img width="1908" height="812" alt="image" src="https://github.com/user-attachments/assets/a3eff7a5-7089-4127-9580-ba76fcf1d1ea" />
+
+
+Note: I edited the "Radix" to Hexadecimal.
+
