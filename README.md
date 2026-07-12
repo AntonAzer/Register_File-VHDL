@@ -19,3 +19,6 @@ Although the design methodologies were different (Structural vs. Behavioral), th
 
 Note: I edited the "Radix" to Hexadecimal.
 
+----------------------------------------------------
+
+If you want to take the files don't forget to rename the file you want to test like the entity name "RegisterFile" and set it as top level entity if you are in Quartus.
