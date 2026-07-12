@@ -2,7 +2,7 @@
 
 # RTL DFFs Structal Model :
 <img width="901" height="853" alt="image" src="https://github.com/user-attachments/assets/ca4ff136-8b81-4339-b0a3-c2b5f5cea6f7" />
-----------------------------------------------------
+
 
 
 # RTL Memory Array Structal Model :
