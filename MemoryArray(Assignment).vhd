@@ -26,15 +26,18 @@ begin
     begin
         if rst = '1' then
             for i in 0 to 7 loop
-                regs(i) <= (others => '0');
+                regs(i) <= (others => '0'); -- the 8 regs. will be zeros in parallel it is not cpp : )
             end loop;
         elsif rising_edge(clk) then
             if we = '1' then
-                regs(to_integer(unsigned(write_addr))) <= write_data;
+                regs(to_integer(unsigned(write_addr))) <= write_data; 
+            -- this line is magic : take the reg(x) where x is the addr we want to write at after converting to unsigned int , then the 
+            -- content of write_data will move to that index of the array.
             end if;
         end if;
     end process;
 
     read_data1 <= regs(to_integer(unsigned(read_addr1)));
     read_data2 <= regs(to_integer(unsigned(read_addr2)));
+            -- read part
 end Behavioral;
