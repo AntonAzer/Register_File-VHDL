@@ -26,6 +26,12 @@ Note: I edited the "Radix" to Hexadecimal.
 
 
 Note: Port0 ,Port1 repreasent the two read_addresses in the code and not specific registers ,read the tb file to understand the wave form : ) 
+
+Note Again: exactly at 50000ps (50 ns) the ports updated at falling edge not rising because changing read address is an Asynch. operation and it is exactly after 5 cycles.
+
+
+<img width="540" height="742" alt="image" src="https://github.com/user-attachments/assets/c530d633-ab3a-41a7-8fbb-73aa4b23ca1f" />
+
  
 ----------------------------------------------------
 
