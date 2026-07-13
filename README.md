@@ -17,8 +17,16 @@ Although the design methodologies were different (Structural vs. Behavioral), th
 <img width="1908" height="812" alt="image" src="https://github.com/user-attachments/assets/a3eff7a5-7089-4127-9580-ba76fcf1d1ea" />
 
 
+
+
 Note: I edited the "Radix" to Hexadecimal.
 
+# associated with the required in the document :
+<img width="682" height="647" alt="image" src="https://github.com/user-attachments/assets/8d920df6-ba90-4475-b9f9-b8139fb4a1e0" />
+
+
+Note: Port0 ,Port1 repreasent the two read_addresses in the code and not specific registers ,read the tb file to understand the wave form : ) 
+ 
 ----------------------------------------------------
 
 If you want to take the files don't forget to rename the file you want to test like the entity name "RegisterFile" and set it as top level entity if you are in Quartus.
