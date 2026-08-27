@@ -39,10 +39,10 @@ begin
         decode_we <= (others => '0');
         if we = '1' then
             decode_we(to_integer(unsigned(write_addr))) <= '1'; 
-    -- I take the 3 bit address then take the int value of it then this int I set it as 1 in the write enable array.
+    -- I take the 3 bit address then take the int value of it then this integer I set it as 1 in the write enable array.
         end if;
     end process;
-
+-- The declaration of the component
     GEN_REGS: for i in 0 to 7 generate
         RegX: Reg_8bit port map (
             clk => clk,
@@ -50,7 +50,7 @@ begin
             en  => decode_we(i),
             d   => write_data,
             q   => reg_outputs(i)
-            -- notice that this is not assignment statement (<=) it association statement like connecting the ports.
+            -- notice that this is not assignment statement (<=) it association statement like connecting the ports (mapping).
         );
     end generate;
     -- this like a loop in algorithmic prog. lang. to update the ports for the 8 registers combinationally without clock waiting
@@ -61,7 +61,7 @@ begin
 
 end Structural;
 
-
+-- as new entity, new calling for the libraries
 library ieee;
 use ieee.std_logic_1164.all;
 
