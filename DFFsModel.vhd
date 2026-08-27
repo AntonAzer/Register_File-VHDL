@@ -31,7 +31,7 @@ architecture Structural of RegisterFile is
     -- new type 8 vector * 8 bits 
     signal reg_outputs : wire_array;
     
-    signal decode_we : std_logic_vector(7 downto 0);
+    signal decode_we : std_logic_vector(7 downto 0); -- works as decoder 
 
 begin
     process(write_addr, we)
@@ -57,7 +57,8 @@ begin
 
     read_data1 <= reg_outputs(to_integer(unsigned(read_addr1)));
     read_data2 <= reg_outputs(to_integer(unsigned(read_addr2)));
--- same idea of handling the 3 bit addr to an index to the output reg.
+
+-- same idea of handling the 3 bit addr to an index to the output reg, this out of the process which means no wait for the clock
 
 end Structural;
 
@@ -71,7 +72,7 @@ entity Reg_8bit is
          q : out std_logic_vector(7 downto 0));
 end Reg_8bit;
 -- the component I declared in the Archit.
-architecture Behavioral of Reg_8bit is
+architecture Behavioral of Reg_8bit is -- the Behavioral for the component, we already designed the outer matrix structrally
 begin
     process(clk, rst) -- DFF concept
     begin
