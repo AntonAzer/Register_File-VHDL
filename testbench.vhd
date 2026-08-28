@@ -24,6 +24,8 @@ architecture Test of tb_RegisterFile is
     constant clk_period : time := 10 ns;
 
 begin
+    -- UUT : Unit Under Test
+    -- Mapping the Register file hardware with the test signals, intially zeros
     uut: RegisterFile port map (
         clk => clk, rst => rst, we => we,
         read_addr1 => read_addr1, read_addr2 => read_addr2,
@@ -33,6 +35,7 @@ begin
 
     clk_process :process
     begin
+        -- Clock signals creation
         clk <= '0';
         wait for clk_period/2;
         clk <= '1';
@@ -41,10 +44,11 @@ begin
 
     stim_proc: process
     begin		
+        -- Intially reset the registers
         rst <= '1'; we <= '0';
         read_addr1 <= "000"; read_addr2 <= "000";
         wait for clk_period;
-
+        -- From here 
         rst <= '0'; we <= '1';
         write_addr <= "000"; write_data <= x"FF";
         wait for clk_period;
@@ -57,6 +61,8 @@ begin
 
         we <= '1'; write_addr <= "011"; write_data <= x"08";
         wait for clk_period;
+        -- To here finally finish the writing process exactly as description PDF
+        -- The rest also exactly as required read (and sometimes wirte in the same cycle)
 
         we <= '1'; write_addr <= "100"; write_data <= x"03";
         read_addr1 <= "001"; read_addr2 <= "111";
@@ -73,6 +79,7 @@ begin
         we <= '1'; write_addr <= "000"; write_data <= x"01";
         read_addr1 <= "110"; read_addr2 <= "000";
         wait for clk_period;
+        -- if you observe that in the waveform in the readme there is no change after ninth cycle as there is exactly 9 "wait for clk_period;"
 
         wait;
     end process;
